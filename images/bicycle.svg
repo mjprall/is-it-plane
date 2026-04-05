@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Background - park scene -->
+  <rect width="400" height="300" fill="#87CEEB"/>
+  <rect x="0" y="220" width="400" height="80" fill="#5A8A3C"/>
+  <!-- Path/road -->
+  <rect x="150" y="200" width="100" height="100" fill="#C8A870"/>
+  <!-- Trees -->
+  <rect x="40" y="185" width="15" height="40" fill="#8B6914"/>
+  <circle cx="47" cy="175" r="30" fill="#2D6A28"/>
+  <rect x="340" y="185" width="15" height="40" fill="#8B6914"/>
+  <circle cx="347" cy="175" r="30" fill="#2D6A28"/>
+  <!-- Bicycle frame -->
+  <!-- Rear wheel -->
+  <circle cx="130" cy="205" r="38" fill="none" stroke="#333" stroke-width="5"/>
+  <circle cx="130" cy="205" r="32" fill="none" stroke="#555" stroke-width="2"/>
+  <circle cx="130" cy="205" r="6" fill="#555"/>
+  <!-- Spokes rear -->
+  <line x1="130" y1="167" x2="130" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="130" y1="205" x2="130" y2="243" stroke="#777" stroke-width="2"/>
+  <line x1="92" y1="205" x2="130" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="130" y1="205" x2="168" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="103" y1="178" x2="130" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="157" y1="178" x2="130" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="103" y1="232" x2="130" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="157" y1="232" x2="130" y2="205" stroke="#777" stroke-width="2"/>
+  <!-- Front wheel -->
+  <circle cx="270" cy="205" r="38" fill="none" stroke="#333" stroke-width="5"/>
+  <circle cx="270" cy="205" r="32" fill="none" stroke="#555" stroke-width="2"/>
+  <circle cx="270" cy="205" r="6" fill="#555"/>
+  <!-- Spokes front -->
+  <line x1="270" y1="167" x2="270" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="270" y1="205" x2="270" y2="243" stroke="#777" stroke-width="2"/>
+  <line x1="232" y1="205" x2="270" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="270" y1="205" x2="308" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="243" y1="178" x2="270" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="297" y1="178" x2="270" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="243" y1="232" x2="270" y2="205" stroke="#777" stroke-width="2"/>
+  <line x1="297" y1="232" x2="270" y2="205" stroke="#777" stroke-width="2"/>
+  <!-- Frame - bottom bracket -->
+  <line x1="163" y1="205" x2="200" y2="205" stroke="#CC4400" stroke-width="5"/>
+  <!-- Frame - chainstay -->
+  <line x1="130" y1="205" x2="200" y2="205" stroke="#CC4400" stroke-width="5"/>
+  <!-- Frame - seat tube -->
+  <line x1="200" y1="160" x2="200" y2="205" stroke="#CC4400" stroke-width="5"/>
+  <!-- Frame - top tube -->
+  <line x1="200" y1="165" x2="255" y2="175" stroke="#CC4400" stroke-width="5"/>
+  <!-- Frame - down tube -->
+  <line x1="200" y1="205" x2="255" y2="175" stroke="#CC4400" stroke-width="5"/>
+  <!-- Frame - fork -->
+  <line x1="255" y1="175" x2="270" y2="205" stroke="#CC4400" stroke-width="5"/>
+  <!-- Frame - seat stay -->
+  <line x1="200" y1="160" x2="130" y2="205" stroke="#CC4400" stroke-width="5"/>
+  <!-- Seat post -->
+  <line x1="200" y1="148" x2="200" y2="165" stroke="#333" stroke-width="4"/>
+  <!-- Seat -->
+  <ellipse cx="200" cy="148" rx="25" ry="8" fill="#222"/>
+  <!-- Handlebar stem -->
+  <line x1="255" y1="168" x2="255" y2="155" stroke="#333" stroke-width="4"/>
+  <!-- Handlebars -->
+  <line x1="240" y1="155" x2="270" y2="155" stroke="#333" stroke-width="4"/>
+  <circle cx="240" cy="155" r="4" fill="#222"/>
+  <circle cx="270" cy="155" r="4" fill="#222"/>
+  <!-- Label -->
+  <text x="200" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">Bicycle</text>
+</svg>

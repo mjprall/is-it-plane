@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#87CEEB"/>
+  <!-- Road -->
+  <rect x="0" y="230" width="400" height="70" fill="#555"/>
+  <rect x="0" y="226" width="400" height="8" fill="#666"/>
+  <!-- Road markings -->
+  <rect x="30" y="260" width="60" height="5" fill="#FFD700" opacity="0.7"/>
+  <rect x="140" y="260" width="60" height="5" fill="#FFD700" opacity="0.7"/>
+  <rect x="250" y="260" width="60" height="5" fill="#FFD700" opacity="0.7"/>
+  <rect x="360" y="260" width="60" height="5" fill="#FFD700" opacity="0.7"/>
+  <!-- Car body -->
+  <rect x="80" y="195" width="240" height="45" rx="8" fill="#CC2233"/>
+  <!-- Car top/cabin -->
+  <path d="M130,195 Q145,165 175,160 L245,160 Q270,160 285,195Z" fill="#DD3344"/>
+  <!-- Windows -->
+  <path d="M145,193 Q152,170 175,165 L210,165 L210,193Z" fill="#88BBDD" opacity="0.8"/>
+  <path d="M215,193 L215,165 L245,165 Q265,170 270,193Z" fill="#88BBDD" opacity="0.8"/>
+  <line x1="212" y1="165" x2="212" y2="193" stroke="#AA2233" stroke-width="3"/>
+  <!-- Hood -->
+  <rect x="285" y="205" width="50" height="28" rx="5" fill="#BB2233"/>
+  <!-- Front bumper -->
+  <rect x="285" y="228" width="58" height="12" rx="4" fill="#CC2233"/>
+  <!-- Front grill -->
+  <rect x="320" y="210" width="20" height="12" rx="2" fill="#333"/>
+  <!-- Headlights -->
+  <rect x="330" y="208" width="12" height="8" rx="2" fill="#FFEE88"/>
+  <!-- Back bumper -->
+  <rect x="57" y="228" width="58" height="12" rx="4" fill="#CC2233"/>
+  <!-- Taillights -->
+  <rect x="63" y="208" width="12" height="10" rx="2" fill="#FF4444"/>
+  <!-- Wheels -->
+  <circle cx="140" cy="240" r="28" fill="#222"/>
+  <circle cx="140" cy="240" r="18" fill="#444"/>
+  <circle cx="140" cy="240" r="9" fill="#888"/>
+  <circle cx="270" cy="240" r="28" fill="#222"/>
+  <circle cx="270" cy="240" r="18" fill="#444"/>
+  <circle cx="270" cy="240" r="9" fill="#888"/>
+  <!-- Wheel details (hubcap spokes) -->
+  <line x1="140" y1="222" x2="140" y2="240" stroke="#666" stroke-width="2"/>
+  <line x1="140" y1="240" x2="140" y2="258" stroke="#666" stroke-width="2"/>
+  <line x1="122" y1="240" x2="140" y2="240" stroke="#666" stroke-width="2"/>
+  <line x1="140" y1="240" x2="158" y2="240" stroke="#666" stroke-width="2"/>
+  <line x1="127" y1="227" x2="140" y2="240" stroke="#666" stroke-width="2"/>
+  <line x1="153" y1="227" x2="140" y2="240" stroke="#666" stroke-width="2"/>
+  <line x1="127" y1="253" x2="140" y2="240" stroke="#666" stroke-width="2"/>
+  <line x1="153" y1="253" x2="140" y2="240" stroke="#666" stroke-width="2"/>
+  <line x1="270" y1="222" x2="270" y2="240" stroke="#666" stroke-width="2"/>
+  <line x1="270" y1="240" x2="270" y2="258" stroke="#666" stroke-width="2"/>
+  <line x1="252" y1="240" x2="270" y2="240" stroke="#666" stroke-width="2"/>
+  <line x1="270" y1="240" x2="288" y2="240" stroke="#666" stroke-width="2"/>
+  <!-- Label -->
+  <text x="200" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">Car</text>
+</svg>

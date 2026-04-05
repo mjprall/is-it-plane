@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Ocean background -->
+  <defs>
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#1E6091;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A4F73;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#oceanGrad)"/>
+  <!-- Waves -->
+  <path d="M0,175 Q50,165 100,175 Q150,185 200,175 Q250,165 300,175 Q350,185 400,175 L400,300 L0,300Z" fill="#1E6091"/>
+  <path d="M0,185 Q50,175 100,185 Q150,195 200,185 Q250,175 300,185 Q350,195 400,185 L400,300 L0,300Z" fill="#1A5580"/>
+  <!-- Clouds -->
+  <ellipse cx="70" cy="50" rx="50" ry="24" fill="white" opacity="0.8"/>
+  <ellipse cx="100" cy="42" rx="38" ry="19" fill="white" opacity="0.8"/>
+  <ellipse cx="310" cy="65" rx="55" ry="26" fill="white" opacity="0.8"/>
+  <!-- Ship hull -->
+  <path d="M60,185 L340,185 L320,215 L80,215Z" fill="#8B6914"/>
+  <rect x="65" y="155" width="270" height="32" rx="5" fill="#A07820"/>
+  <!-- Ship deck -->
+  <rect x="75" y="150" width="250" height="10" fill="#8B6914"/>
+  <!-- Bridge/cabin -->
+  <rect x="155" y="115" width="90" height="40" rx="3" fill="#C8A028"/>
+  <rect x="165" y="105" width="70" height="15" rx="3" fill="#B89020"/>
+  <!-- Bridge windows -->
+  <rect x="165" y="120" width="15" height="12" rx="2" fill="#88BBDD" opacity="0.8"/>
+  <rect x="185" y="120" width="15" height="12" rx="2" fill="#88BBDD" opacity="0.8"/>
+  <rect x="205" y="120" width="15" height="12" rx="2" fill="#88BBDD" opacity="0.8"/>
+  <rect x="225" y="120" width="15" height="12" rx="2" fill="#88BBDD" opacity="0.8"/>
+  <!-- Smokestack -->
+  <rect x="195" y="80" width="20" height="28" rx="2" fill="#666"/>
+  <rect x="192" y="78" width="26" height="8" rx="3" fill="#555"/>
+  <!-- Smoke -->
+  <circle cx="205" cy="65" r="12" fill="#AAA" opacity="0.5"/>
+  <circle cx="215" cy="52" r="9" fill="#AAA" opacity="0.4"/>
+  <circle cx="220" cy="40" r="7" fill="#AAA" opacity="0.3"/>
+  <!-- Cargo containers on deck -->
+  <rect x="80" y="135" width="60" height="18" rx="2" fill="#CC4433"/>
+  <rect x="145" y="135" width="10" height="18" rx="2" fill="#AA3322"/>
+  <!-- Anchor chain -->
+  <line x1="90" y1="185" x2="90" y2="215" stroke="#555" stroke-width="3"/>
+  <!-- Wake/foam -->
+  <path d="M60,215 Q200,225 340,215" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
+  <!-- Label -->
+  <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">Cargo Ship</text>
+</svg>

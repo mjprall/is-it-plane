@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#87CEEB"/>
+  <!-- Sky clouds -->
+  <ellipse cx="80" cy="60" rx="50" ry="25" fill="white" opacity="0.8"/>
+  <ellipse cx="110" cy="50" rx="40" ry="20" fill="white" opacity="0.8"/>
+  <ellipse cx="320" cy="80" rx="55" ry="28" fill="white" opacity="0.8"/>
+  <ellipse cx="355" cy="70" rx="35" ry="18" fill="white" opacity="0.8"/>
+  <!-- Plane body (fuselage) -->
+  <ellipse cx="200" cy="165" rx="110" ry="22" fill="#E8E8E8"/>
+  <path d="M90,165 Q130,130 200,155 Q270,130 310,165 Q270,180 200,175 Q130,185 90,165Z" fill="#D0D0D0"/>
+  <!-- Nose cone -->
+  <path d="M310,165 Q340,165 345,163 Q340,168 310,168Z" fill="#C0C0C0"/>
+  <!-- Tail -->
+  <path d="M90,165 Q85,165 80,163 Q83,168 90,168Z" fill="#C0C0C0"/>
+  <!-- Main wings -->
+  <path d="M160,165 Q170,120 220,115 Q240,115 245,125 Q230,130 175,168Z" fill="#B0B8C8"/>
+  <path d="M160,168 Q170,210 220,215 Q240,215 245,205 Q230,200 175,168Z" fill="#B0B8C8"/>
+  <!-- Wing details -->
+  <line x1="175" y1="140" x2="240" y2="125" stroke="#9098A8" stroke-width="1"/>
+  <!-- Tail fins (horizontal) -->
+  <path d="M100,163 Q105,140 125,138 Q135,140 130,155Z" fill="#9098A8"/>
+  <path d="M100,168 Q105,190 125,192 Q135,190 130,175Z" fill="#9098A8"/>
+  <!-- Vertical tail fin -->
+  <path d="M92,165 Q88,150 95,130 Q100,128 108,140 Q112,150 110,163Z" fill="#9098A8"/>
+  <!-- Windows -->
+  <rect x="270" y="157" width="8" height="6" rx="2" fill="#88BBEE" opacity="0.9"/>
+  <rect x="255" y="157" width="8" height="6" rx="2" fill="#88BBEE" opacity="0.9"/>
+  <rect x="240" y="158" width="8" height="6" rx="2" fill="#88BBEE" opacity="0.9"/>
+  <rect x="225" y="158" width="8" height="6" rx="2" fill="#88BBEE" opacity="0.9"/>
+  <rect x="210" y="158" width="8" height="6" rx="2" fill="#88BBEE" opacity="0.9"/>
+  <rect x="195" y="158" width="8" height="6" rx="2" fill="#88BBEE" opacity="0.9"/>
+  <rect x="180" y="158" width="8" height="6" rx="2" fill="#88BBEE" opacity="0.9"/>
+  <rect x="165" y="159" width="8" height="6" rx="2" fill="#88BBEE" opacity="0.9"/>
+  <rect x="150" y="160" width="8" height="6" rx="2" fill="#88BBEE" opacity="0.9"/>
+  <!-- Engine -->
+  <ellipse cx="210" cy="175" rx="12" ry="6" fill="#A0A0A0"/>
+  <ellipse cx="195" cy="175" rx="8" ry="4" fill="#888"/>
+  <!-- Label -->
+  <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">Commercial Jet</text>
+</svg>

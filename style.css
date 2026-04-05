@@ -1,0 +1,196 @@
+/* ── Reset & base ────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0f0f0;
+  padding: 1rem;
+}
+
+/* ── Layout ──────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Header ──────────────────────────────────────── */
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(100, 180, 255, 0.4);
+}
+
+.subtitle {
+  margin-top: 0.4rem;
+  font-size: 1.05rem;
+  color: #99b8d4;
+}
+
+/* ── Score board ─────────────────────────────────── */
+.score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  padding: 0.55rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.score-item {
+  color: #d0e8ff;
+}
+
+.score-divider {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Image card ──────────────────────────────────── */
+.image-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.image-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+}
+
+/* ── Feedback message ────────────────────────────── */
+.feedback {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  min-height: 2.2rem;
+  transition: opacity 0.3s ease;
+}
+
+.feedback.correct {
+  color: #5cffa0;
+  text-shadow: 0 0 16px rgba(92, 255, 160, 0.5);
+}
+
+.feedback.wrong {
+  color: #ff6b6b;
+  text-shadow: 0 0 16px rgba(255, 107, 107, 0.5);
+}
+
+/* ── Buttons ─────────────────────────────────────── */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.85rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+  letter-spacing: 0.3px;
+  min-width: 180px;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-yes {
+  background: linear-gradient(135deg, #1a73e8, #0f52ba);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(26, 115, 232, 0.45);
+}
+
+.btn-yes:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 115, 232, 0.6);
+}
+
+.btn-no {
+  background: linear-gradient(135deg, #e8411a, #c0320f);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(232, 65, 26, 0.45);
+}
+
+.btn-no:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 65, 26, 0.6);
+}
+
+/* ── Next-image hint ─────────────────────────────── */
+.next-hint {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #99b8d4;
+  min-height: 1.4rem;
+}
+
+/* ── Footer ──────────────────────────────────────── */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6a8eaa;
+}
+
+/* ── Card flip animation on load ─────────────────── */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.image-card.animate {
+  animation: slideIn 0.35s ease forwards;
+}
