@@ -5,15 +5,31 @@ const CDN_BASE = 'https://cdn.jsdelivr.net/npm/@mdi/svg@7.4.47/svg';
 // and an alt description.
 const images = [
   { src: `${CDN_BASE}/airplane.svg`,         isPlane: true,  alt: 'A commercial passenger jet' },
-  { src: `${CDN_BASE}/airplane-takeoff.svg`, isPlane: true,  alt: 'A classic biplane taking off' },
-  { src: `${CDN_BASE}/rocket.svg`,           isPlane: true,  alt: 'A space rocket' },
+  { src: `${CDN_BASE}/airplane-takeoff.svg`, isPlane: true,  alt: 'A plane taking off' },
   { src: `${CDN_BASE}/airplane-landing.svg`, isPlane: true,  alt: 'A jet coming in to land' },
+  { src: `${CDN_BASE}/airplane-clock.svg`,   isPlane: true,  alt: 'A small propeller plane' },
+  { src: `${CDN_BASE}/airplane-edit.svg`,    isPlane: true,  alt: 'A vintage biplane' },
+  { src: `${CDN_BASE}/airplane-alert.svg`,   isPlane: true,  alt: 'A military fighter jet' },
+  { src: `${CDN_BASE}/airplane-check.svg`,   isPlane: true,  alt: 'A private jet' },
+  { src: `${CDN_BASE}/airplane-cog.svg`,     isPlane: true,  alt: 'A cargo plane' },
   { src: `${CDN_BASE}/car.svg`,              isPlane: false, alt: 'A car on the road' },
   { src: `${CDN_BASE}/ferry.svg`,            isPlane: false, alt: 'A ferry at sea' },
   { src: `${CDN_BASE}/bicycle.svg`,          isPlane: false, alt: 'A bicycle' },
   { src: `${CDN_BASE}/helicopter.svg`,       isPlane: false, alt: 'A helicopter in flight' },
   { src: `${CDN_BASE}/balloon.svg`,          isPlane: false, alt: 'A hot-air balloon' },
   { src: `${CDN_BASE}/train.svg`,            isPlane: false, alt: 'A train on the tracks' },
+  { src: `${CDN_BASE}/rocket.svg`,           isPlane: false, alt: 'A space rocket' },
+  { src: `${CDN_BASE}/rocket-launch.svg`,    isPlane: false, alt: 'A rocket launching' },
+  { src: `${CDN_BASE}/drone.svg`,            isPlane: false, alt: 'A drone' },
+  { src: `${CDN_BASE}/ufo.svg`,              isPlane: false, alt: 'A UFO' },
+  { src: `${CDN_BASE}/bus.svg`,              isPlane: false, alt: 'A bus' },
+  { src: `${CDN_BASE}/truck.svg`,            isPlane: false, alt: 'A truck' },
+  { src: `${CDN_BASE}/submarine.svg`,        isPlane: false, alt: 'A submarine' },
+  { src: `${CDN_BASE}/motorcycle.svg`,       isPlane: false, alt: 'A motorcycle' },
+  { src: `${CDN_BASE}/ambulance.svg`,        isPlane: false, alt: 'An ambulance' },
+  { src: `${CDN_BASE}/fire-truck.svg`,       isPlane: false, alt: 'A fire truck' },
+  { src: `${CDN_BASE}/tractor.svg`,          isPlane: false, alt: 'A tractor' },
+  { src: `${CDN_BASE}/scooter.svg`,          isPlane: false, alt: 'A scooter' },
 ];
 
 // State
