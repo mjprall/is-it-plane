@@ -21,6 +21,7 @@ let currentImage = null;
 let correctCount = 0;
 let wrongCount = 0;
 let recentIndices = [];
+let loadGeneration = 0; // incremented on each load to discard stale fetch results
 
 // DOM refs
 const svgContainer = document.getElementById('mystery-image');
@@ -52,20 +53,16 @@ function pickRandom() {
 }
 
 /**
- * Fetch an SVG from a URL and inject it inline into the container.
+ * Fetch an SVG from a URL and return its text content.
  * @param {string} url - CDN URL of the SVG to load
- * @param {string} altText - Accessible label for the image
+ * @returns {Promise<string>} The raw SVG markup
  */
-async function fetchSVG(url, altText) {
+async function fetchSVG(url) {
   const response = await fetch(url);
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const svgText = await response.text();
-  svgContainer.innerHTML = svgText;
-  const svgEl = svgContainer.querySelector('svg');
-  if (svgEl) {
-    svgEl.setAttribute('aria-label', altText);
-    svgEl.setAttribute('role', 'img');
+  if (!response.ok) {
+    throw new Error(`Failed to fetch SVG from ${url}: ${response.status} ${response.statusText}`);
   }
+  return response.text();
 }
 
 /**
@@ -74,6 +71,7 @@ async function fetchSVG(url, altText) {
  */
 async function loadNewImage() {
   currentImage = pickRandom();
+  const generation = ++loadGeneration;
 
   // Trigger animation
   imageCard.classList.remove('animate');
@@ -92,8 +90,17 @@ async function loadNewImage() {
   svgContainer.innerHTML = '<span class="image-loading">Loading…</span>';
 
   try {
-    await fetchSVG(currentImage.src, currentImage.alt);
+    const svgText = await fetchSVG(currentImage.src);
+    // Discard results from a superseded load (e.g. rapid successive calls)
+    if (generation !== loadGeneration) return;
+    svgContainer.innerHTML = svgText;
+    const svgEl = svgContainer.querySelector('svg');
+    if (svgEl) {
+      svgEl.setAttribute('aria-label', currentImage.alt);
+      svgEl.setAttribute('role', 'img');
+    }
   } catch (err) {
+    if (generation !== loadGeneration) return;
     svgContainer.innerHTML = '<span class="image-error">⚠️ Failed to load image</span>';
     console.error('Failed to fetch image:', err);
   }
