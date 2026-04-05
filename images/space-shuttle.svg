@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Sky background -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#skyGrad)"/>
+  <!-- Stars -->
+  <circle cx="30" cy="20" r="1.5" fill="white" opacity="0.8"/>
+  <circle cx="80" cy="40" r="1" fill="white" opacity="0.6"/>
+  <circle cx="140" cy="15" r="1.5" fill="white" opacity="0.9"/>
+  <circle cx="200" cy="30" r="1" fill="white" opacity="0.7"/>
+  <circle cx="270" cy="10" r="2" fill="white" opacity="0.8"/>
+  <circle cx="340" cy="50" r="1" fill="white" opacity="0.6"/>
+  <circle cx="380" cy="25" r="1.5" fill="white" opacity="0.9"/>
+  <circle cx="50" cy="80" r="1" fill="white" opacity="0.5"/>
+  <circle cx="320" cy="70" r="1.5" fill="white" opacity="0.7"/>
+  <!-- Space shuttle orbiter body -->
+  <path d="M280,155 Q310,140 320,150 L310,170 Q295,175 280,168Z" fill="#E8E8E8"/>
+  <!-- Main fuselage -->
+  <path d="M120,155 Q200,135 280,155 L280,168 Q200,180 120,168Z" fill="#F0F0F0"/>
+  <!-- Nose -->
+  <path d="M280,155 L320,150 L315,162 L280,168Z" fill="#D0D0D0"/>
+  <!-- Underside heat shield (black) -->
+  <path d="M120,168 Q200,178 280,168 Q200,183 120,175Z" fill="#222"/>
+  <!-- Delta wing -->
+  <polygon points="130,166 80,220 160,168" fill="#D8D8D8"/>
+  <polygon points="165,165 100,230 190,168" fill="#C8C8C8"/>
+  <!-- Vertical tail -->
+  <polygon points="125,160 115,110 145,158" fill="#D8D8D8"/>
+  <!-- Payload bay doors (when open would show) -->
+  <rect x="175" y="138" width="70" height="17" rx="2" fill="#E0E0E0" stroke="#CCC" stroke-width="1"/>
+  <line x1="210" y1="138" x2="210" y2="155" stroke="#BBB" stroke-width="1"/>
+  <!-- Cockpit windows -->
+  <rect x="262" y="142" width="14" height="9" rx="3" fill="#334466" opacity="0.9"/>
+  <rect x="249" y="143" width="12" height="8" rx="3" fill="#334466" opacity="0.8"/>
+  <!-- NASA text -->
+  <text x="210" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#0B3D91" opacity="0.7">NASA</text>
+  <!-- Engines -->
+  <ellipse cx="135" cy="168" rx="10" ry="7" fill="#888"/>
+  <ellipse cx="150" cy="171" rx="10" ry="7" fill="#888"/>
+  <ellipse cx="165" cy="172" rx="10" ry="7" fill="#888"/>
+  <!-- Engine glow -->
+  <ellipse cx="130" cy="168" rx="6" ry="5" fill="#FF6600" opacity="0.5"/>
+  <ellipse cx="145" cy="171" rx="6" ry="5" fill="#FF6600" opacity="0.5"/>
+  <ellipse cx="160" cy="172" rx="6" ry="5" fill="#FF6600" opacity="0.5"/>
+  <!-- Label -->
+  <text x="200" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">Space Shuttle</text>
+</svg>

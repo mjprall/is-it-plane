@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is This a Plane?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>✈️ Is This a Plane?</h1>
+      <p class="subtitle">Test your plane-spotting skills!</p>
+    </header>
+
+    <main>
+      <div class="score-board">
+        <span class="score-item">✅ <span id="correct-count">0</span> Correct</span>
+        <span class="score-divider">|</span>
+        <span class="score-item">❌ <span id="wrong-count">0</span> Wrong</span>
+      </div>
+
+      <div class="image-card" id="image-card">
+        <img id="mystery-image" src="" alt="Mystery object" />
+      </div>
+
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+
+      <div class="buttons" id="buttons">
+        <button class="btn btn-yes" id="btn-yes" onclick="handleAnswer(true)">
+          ✈️ Yes, it's a plane!
+        </button>
+        <button class="btn btn-no" id="btn-no" onclick="handleAnswer(false)">
+          🚫 No, it's not!
+        </button>
+      </div>
+
+      <div class="next-hint" id="next-hint"></div>
+    </main>
+
+    <footer>
+      <p>A fun guessing game — how good is your plane radar? 🛫</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
