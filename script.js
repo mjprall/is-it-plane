@@ -57,6 +57,8 @@ function loadNewImage() {
 
   // Trigger animation
   imageCard.classList.remove('animate');
+  // Force a reflow so the browser registers the class removal before re-adding
+  // it — this restarts the CSS keyframe animation from the beginning.
   void imageCard.offsetWidth; // reflow
   imageCard.classList.add('animate');
 
@@ -101,6 +103,10 @@ function handleAnswer(userSaysPlane) {
   nextHintEl.textContent = 'Loading next image…';
   setTimeout(loadNewImage, 1800);
 }
+
+// Wire up buttons via event listeners (no inline onclick in HTML)
+btnYes.addEventListener('click', () => handleAnswer(true));
+btnNo.addEventListener('click',  () => handleAnswer(false));
 
 // Start the game when the page loads
 loadNewImage();
