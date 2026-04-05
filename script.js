@@ -1,15 +1,19 @@
-// Image data: each entry has a path, whether it's a plane, and an alt description.
+// CDN base URL for Material Design Icons (pinned to a specific version for stability).
+const CDN_BASE = 'https://cdn.jsdelivr.net/npm/@mdi/svg@7.4.47/svg';
+
+// Image data: each entry has a CDN URL to fetch the SVG from, whether it's a plane,
+// and an alt description.
 const images = [
-  { src: 'images/commercial-jet.svg',  isPlane: true,  alt: 'A commercial passenger jet' },
-  { src: 'images/fighter-jet.svg',     isPlane: true,  alt: 'A military fighter jet' },
-  { src: 'images/biplane.svg',         isPlane: true,  alt: 'A classic biplane' },
-  { src: 'images/space-shuttle.svg',   isPlane: true,  alt: 'A space shuttle orbiter' },
-  { src: 'images/car.svg',             isPlane: false, alt: 'A red car on the road' },
-  { src: 'images/cargo-ship.svg',      isPlane: false, alt: 'A cargo ship at sea' },
-  { src: 'images/bicycle.svg',         isPlane: false, alt: 'A bicycle in the park' },
-  { src: 'images/helicopter.svg',      isPlane: false, alt: 'A helicopter in flight' },
-  { src: 'images/hot-air-balloon.svg', isPlane: false, alt: 'A hot-air balloon' },
-  { src: 'images/train.svg',           isPlane: false, alt: 'A steam train on the tracks' },
+  { src: `${CDN_BASE}/airplane.svg`,         isPlane: true,  alt: 'A commercial passenger jet' },
+  { src: `${CDN_BASE}/airplane-takeoff.svg`, isPlane: true,  alt: 'A classic biplane taking off' },
+  { src: `${CDN_BASE}/rocket.svg`,           isPlane: true,  alt: 'A space rocket' },
+  { src: `${CDN_BASE}/airplane-landing.svg`, isPlane: true,  alt: 'A jet coming in to land' },
+  { src: `${CDN_BASE}/car.svg`,              isPlane: false, alt: 'A car on the road' },
+  { src: `${CDN_BASE}/ferry.svg`,            isPlane: false, alt: 'A ferry at sea' },
+  { src: `${CDN_BASE}/bicycle.svg`,          isPlane: false, alt: 'A bicycle' },
+  { src: `${CDN_BASE}/helicopter.svg`,       isPlane: false, alt: 'A helicopter in flight' },
+  { src: `${CDN_BASE}/balloon.svg`,          isPlane: false, alt: 'A hot-air balloon' },
+  { src: `${CDN_BASE}/train.svg`,            isPlane: false, alt: 'A train on the tracks' },
 ];
 
 // State
@@ -17,10 +21,11 @@ let currentImage = null;
 let correctCount = 0;
 let wrongCount = 0;
 let recentIndices = [];
+let loadGeneration = 0; // incremented on each load to discard stale fetch results
 
 // DOM refs
-const imgEl       = document.getElementById('mystery-image');
-const imageCard   = document.getElementById('image-card');
+const svgContainer = document.getElementById('mystery-image');
+const imageCard    = document.getElementById('image-card');
 const feedbackEl  = document.getElementById('feedback');
 const btnYes      = document.getElementById('btn-yes');
 const btnNo       = document.getElementById('btn-no');
@@ -48,12 +53,25 @@ function pickRandom() {
 }
 
 /**
- * Load a new random image into the card with a slide-in animation.
+ * Fetch an SVG from a URL and return its text content.
+ * @param {string} url - CDN URL of the SVG to load
+ * @returns {Promise<string>} The raw SVG markup
  */
-function loadNewImage() {
+async function fetchSVG(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch SVG from ${url}: ${response.status} ${response.statusText}`);
+  }
+  return response.text();
+}
+
+/**
+ * Load a new random image into the card with a slide-in animation.
+ * Fetches SVG content from the CDN and injects it inline.
+ */
+async function loadNewImage() {
   currentImage = pickRandom();
-  imgEl.src = currentImage.src;
-  imgEl.alt = currentImage.alt;
+  const generation = ++loadGeneration;
 
   // Trigger animation
   imageCard.classList.remove('animate');
@@ -68,6 +86,24 @@ function loadNewImage() {
   nextHintEl.textContent = '';
   btnYes.disabled = false;
   btnNo.disabled  = false;
+
+  svgContainer.innerHTML = '<span class="image-loading">Loading…</span>';
+
+  try {
+    const svgText = await fetchSVG(currentImage.src);
+    // Discard results from a superseded load (e.g. rapid successive calls)
+    if (generation !== loadGeneration) return;
+    svgContainer.innerHTML = svgText;
+    const svgEl = svgContainer.querySelector('svg');
+    if (svgEl) {
+      svgEl.setAttribute('aria-label', currentImage.alt);
+      svgEl.setAttribute('role', 'img');
+    }
+  } catch (err) {
+    if (generation !== loadGeneration) return;
+    svgContainer.innerHTML = '<span class="image-error">⚠️ Failed to load image</span>';
+    console.error('Failed to fetch image:', err);
+  }
 }
 
 /**

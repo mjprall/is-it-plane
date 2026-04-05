@@ -86,11 +86,21 @@ h1 {
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
 }
 
-.image-card img {
+.image-card svg {
   width: 100%;
+  max-width: 280px;
   height: auto;
   display: block;
-  border-radius: 18px;
+  fill: #d0e8ff;
+  padding: 2rem;
+}
+
+.image-loading,
+.image-error {
+  color: #99b8d4;
+  font-size: 1rem;
+  text-align: center;
+  padding: 2rem;
 }
 
 /* ── Feedback message ────────────────────────────── */
