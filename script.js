@@ -16,7 +16,7 @@ const images = [
   { src: `${CDN_BASE}/ferry.svg`,            isPlane: false, alt: 'A ferry at sea' },
   { src: `${CDN_BASE}/bicycle.svg`,          isPlane: false, alt: 'A bicycle' },
   { src: `${CDN_BASE}/helicopter.svg`,       isPlane: false, alt: 'A helicopter in flight' },
-  { src: `${CDN_BASE}/balloon.svg`,          isPlane: false, alt: 'A hot-air balloon' },
+  { src: `${CDN_BASE}/airballoon.svg`,        isPlane: false, alt: 'A hot-air balloon' },
   { src: `${CDN_BASE}/train.svg`,            isPlane: false, alt: 'A train on the tracks' },
   { src: `${CDN_BASE}/rocket.svg`,           isPlane: false, alt: 'A space rocket' },
   { src: `${CDN_BASE}/rocket-launch.svg`,    isPlane: false, alt: 'A rocket launching' },
@@ -161,3 +161,8 @@ btnNo.addEventListener('click',  () => handleAnswer(false));
 
 // Start the game when the page loads
 loadNewImage();
+
+// Allow test environments to import specific items from this module
+if (typeof module !== 'undefined') {
+  module.exports = { images, CDN_BASE, fetchSVG, loadNewImage };
+}
