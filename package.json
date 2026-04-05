@@ -1,0 +1,17 @@
+{
+  "name": "is-it-plane",
+  "version": "1.0.0",
+  "description": "A fun plane-spotting guessing game",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@mdi/svg": "7.4.47",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
